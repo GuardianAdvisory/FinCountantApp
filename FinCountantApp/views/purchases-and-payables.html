@@ -1,0 +1,962 @@
+﻿<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    Purchases And Payables
+    <small>Process</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="purchases-and-payables">Purchases And Payables</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" dropdown-menu-hover data-delay="1000" data-close-others="true">
+                Actions
+                <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-user"></i> New User
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-present"></i> New Event
+                        <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-basket"></i> New order
+                    </a>
+                </li>
+                <li class="divider"> </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-flag"></i> Pending Orders
+                        <span class="badge badge-danger">4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-users"></i> Pending Users
+                        <span class="badge badge-warning">12</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<div class="row" ng-controller="PapController">
+
+    <div class="col-md-10">
+        <!-- BEGIN: ACCORDION DEMO -->
+
+        <div class="portlet light bordered " id="pap-tables">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-settings font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Purchases and Payables</span>
+                    <span class="caption-helper hide"></span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-cloud-upload"></i>
+                    </a>
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-wrench"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="portlet box purple">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Purchase Order
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse collapse-handle"> </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                            <a href="javascript:;" class="reload"> </a>
+                            <a href="javascript:;" class="remove"> </a>
+                        </div>
+
+                    </div>
+
+                    <div class="portlet-body">
+                        <div ng-repeat="data in PoTables">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div ng-controller="DatepickerPopupDemoCtrl">
+                                            <label class="table-font">Date</label>
+                                            <p class="input-group" style="margin-bottom:0;">
+                                                <input type="text" class="form-control" uib-datepicker-popup="dd-MMM-yy" popup-placement="bottom" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open2()">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Supplier</label>
+                                       
+                                            <select  class="form-control" ng-model="selectedOption"
+                                                    ng-options="option.value as option.name for option in options" ng-change="btnSelector(selectedOption)"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <label class="table-font">PO Number</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Amount</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Responsibility Center</label>
+                                            <select class="form-control">
+                                                <option>Zavi</option>
+                                                <option>Iqbal</option>
+                                                <option>Ali</option>
+                                                <option>Umer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-scrollable">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th ng-show="requisitionNoData" scope="col"> Requisition </th>
+                                            <th ng-show="productData" scope="col"> Product</th>
+                                            <th ng-show="descriptionData" scope="col"> Description</th>
+                                            <th ng-show="amountData" scope="col">Amount</th>
+                                            <th ng-show="qtyData" scope="col">Quantity</th>
+                                            <th ng-show="measuringScaleData" scope="col">Measuring Scale</th>
+                                            <th ng-show="rateData" scope="col">Rate</th>
+                                            <th ng-show="amountFcData" scope="col">Amount(FC)</th>
+                                            <th ng-show="exchangeRateData" scope="col">Exchange Rate</th>
+                                            <th ng-show="amountLcData" scope="col">Amount(LC)</th>
+                                            <!--<th class="this-th"></th>-->
+                                            <th ng-show="customerData" scope="col">Customer </th>
+                                            <th ng-show="employeeData" scope="col"> Employee </th>
+                                            <th ng-show="shareholderData" scope="col">Shareholder</th>
+                                            <th ng-show="beneficiaryDepData" scope="col">Beneficiary Department</th>
+                                            <th ng-show="regionData" scope="col"> Region </th>
+                                            <th ng-show="companyData" scope="col">Company</th>
+                                            <th ng-show="businessLineData" scope="col">Business Line</th>
+                                            <th ng-show="projectData" scope="col">Project</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td ng-repeat="data in TableNames" ng-show="{{data}}">
+                                                <input class="form-control" ng-model="model1" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-repeat="data in TableNames" ng-show="{{data}}"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-repeat="data in TableNames" ng-show="{{data}}"> <input class="form-control" ng-model="model1" /> 
+                                            
+                                            </td>
+                                        </tr>
+                                        <!--<tr>
+                                            <td ng-show="requisitionData">
+                                                <ui-select ng-show="requisitionData" ng-model="ctrl.person.selected" theme="select2">
+                                                    <ui-select-match placeholder="Select person">{{$select.selected.name}}</ui-select-match>
+                                                    <ui-select-choices repeat="item in people | filter: $select.search">
+                                                        <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                                        <small ng-bind-html="item.email | highlight: $select.search"></small>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </td>
+                                            <td ng-show="productData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="customerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="employeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="shareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="departmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="regionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="descriptionData" style="min-width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="qtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="rateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="amountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td ng-show="requisitionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="productData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="customerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="employeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="shareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="departmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="regionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="descriptionData" style="min-width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="qtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="rateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="amountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-show="requisitionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="productData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="customerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="employeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="shareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="departmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="regionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="descriptionData" style="min-width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="qtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="rateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="amountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div ng-click="removeTable(data)" class="toggler tooltips" style="margin:8px 0 0 20px;padding-top:5px" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                <i class="fa fa-minus-square"></i>
+                            </div>
+                            <hr class="style-seven" />
+                        
+                         
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-click="POBtn()" class="toggler tooltips pull-left " style="margin:8px 0 0 20px;" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                    <i class="fa fa-plus-square"></i>
+                                </div>
+                                <button class="btn yellow pull-right">Record Invoice</button>
+                                <button class="btn pull-right post-btn">Post</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="portlet box yellow">
+                    <div class="portlet-title">
+
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Transaction Recording
+                        </div>
+                        <div class="tools">
+                            <a id="cll" href="javascript:;" class="collapse collapse-handle"> </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                            <a href="javascript:;" class="reload"> </a>
+                            <a href="javascript:;" class="remove"> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div ng-repeat="data in TRecordingTables">
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+
+                                        <div ng-controller="DatepickerPopupDemoCtrl">
+                                            <label class="table-font">Voucher Date</label>
+                                            <p class="input-group" style="margin-bottom:0;">
+
+                                                <input type="text" class="form-control" uib-datepicker-popup="dd-MMM-yy" popup-placement="bottom" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open2()">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Transaction and Events</label>
+                                            <select class="form-control">
+                                                <option>Debit Note</option>
+                                                <option>Credit Note</option>
+                                                <option>Expense</option>
+                                            </select>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Nature</label>
+                                            <select class="form-control">
+                                                <option>Utilities</option>
+                                                <option>Rent</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="table-font">Supplier</label>
+                                            <select class="form-control">
+                                                <option>Sony</option>
+                                                <option>Dell</option>
+                                                <option>Lenovo</option>
+                                                <option>HP</option>
+                                            </select>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Federal Excise Duty </label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total GST</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+
+                                        <div class="form-group">
+                                            <label class="table-font">Responsibility Center</label>
+                                            <select class="form-control">
+                                                <option>Zavi</option>
+                                                <option>Iqbal</option>
+                                                <option>Ali</option>
+                                                <option>Umer</option>
+                                            </select>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Advance Tax </label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Amount</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="table-scrollable">
+
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th ng-show="tinvoiceNoData" scope="col">Invoice</th>
+                                            <th ng-show="tpurchaseOrderData" scope="col"> Purchase Order </th>
+                                            <th ng-show="tproductData" scope="col"> Product</th>
+                                            <th ng-show="tdescriptionData" style="min-width:400px" scope="col"> Description </th>
+                                            <th ng-show="tqtyData" scope="col">Quantity</th>
+                                            <th ng-show="tmeasuringScaleData" scope="col">Measuring Scale</th>
+                                            <th ng-show="trateData" scope="col">Rate</th>
+                                            <th ng-show="tamountFcData" scope="col">Amount(FC)</th>
+                                            <th ng-show="texchangeRateData" scope="col">Exchange Rate</th>
+                                            <th ng-show="tamountExTaxData" scope="col">Amount(LC) Excl. Tax</th>
+                                            <th ng-show="tfederalExciseDutyData" scope="col">Fedral Excise Duty</th>
+                                            <th ng-show="tgstData" scope="col">GST</th>
+                                            <th ng-show="tadvanceTaxData" scope="col">Advance Tax</th>
+                                            <th ng-show="tamountInTaxData" scope="col">Amount(LC) Incl. Tax</th>
+
+                                            <th ng-show="tcustomerData" scope="col">Customer </th>
+                                            <th ng-show="temployeeData" scope="col"> Employee </th>
+                                            <th ng-show="tshareholderData" scope="col"> Shareholder </th>
+                                            <th ng-show="tbeneficiaryDepartmentData" scope="col">Beneficiary Department </th>
+
+                                            <th ng-show="tregionData" scope="col"> Region </th>
+                                            <th ng-show="tcompanyData" scope="col"> Company</th>
+                                            <th ng-show="tbusinessLineData" scope="col"> Business Line </th>
+                                            <th ng-show="tprojectData" scope="col"> Project </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td ng-repeat="data in tTableNames" ng-show="{{data}}"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+                              
+                                        <!--<tr>
+                                            <td ng-show="tpurchaseOrderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tproductData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tcustomerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="temployeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tshareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdepartmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tregionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdescriptionData" style="min-width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tqtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="trateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tamountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td ng-show="purchaseOrderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tproductData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tcustomerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="temployeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tshareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdepartmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tregionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdescriptionData" style="width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tqtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="trateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tamountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-show="purchaseOrderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tproductData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tcustomerData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="temployeeData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tshareholderData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdepartmentData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tregionData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tdescriptionData" style="min-width:400px"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tqtyData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="trateData"> <input class="form-control" ng-model="model1" /> </td>
+                                            <td ng-show="tamountData"> <input class="form-control" ng-model="model1" /> </td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div ng-click="removeTable(data)" class="toggler tooltips" style="margin:8px 0 0 20px; padding-top:5px" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                <i class="fa fa-minus-square"></i>
+                            </div>
+                            <hr class="invoice-style-seven" />
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-click="TRecordingBtn()" class="toggler tooltips pull-left " style="margin:8px 0 0 20px;" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                    <i class="fa fa-plus-square"></i>
+                                </div>
+                                <button style="width:121.5px;" class="btn blue pull-right">Pay Invoice</button>
+                                <button  class="btn pull-right yellow post-btn">Post</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>Payment
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse collapse-handle"> </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                            <a href="javascript:;" class="reload"> </a>
+                            <a href="javascript:;" class="remove"> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div ng-repeat="data in PaymentTables">
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class=" col-md-4">
+                                        <div ng-controller="DatepickerPopupDemoCtrl">
+                                            <label class="table-font">Date</label>
+                                            <p class="input-group" style="margin-bottom:0;">
+
+                                                <input type="text" class="form-control" uib-datepicker-popup="dd-MMM-yy" popup-placement="bottom" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open2()">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="table-font">Supplier</label>
+                                            <select class="form-control">
+                                                <option>Sony</option>
+                                                <option>Dell</option>
+                                                <option>Lenovo</option>
+                                                <option>HP</option>
+                                            </select>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Transaction Type</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Nature</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <label class="table-font">Payment Type</label>
+                                            <select class="form-control">
+                                                <option>Cash</option>
+                                                <option>Bank</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Amount</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Advance Tax</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="table-font">Total Tax Withheld</label>
+                                            <input class="form-control" ng-model="Date" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="table-font">Responsibility Center</label>
+                                            <select class="form-control">
+                                                <option>Zavi</option>
+                                                <option>Iqbal</option>
+                                                <option>Ali</option>
+                                                <option>Umer</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-scrollable">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th ng-show="pinvoiceData" scope="col"> Invoice# </th>
+                                            <th ng-show="ppurchaseOrderData" scope="col"> Purchase Order </th>
+                                            <th ng-show="pproductData" scope="col"> Product</th>
+                                            <th ng-show="pdescriptionData" style="min-width:400px" scope="col"> Description </th>
+                                            <th ng-show="pqtyData" scope="col"> Quantity </th>
+                                            <th ng-show="pmeasuringScaleData" scope="col"> Measuring Scale </th>
+                                            <th ng-show="prateData" scope="col"> Rate </th>
+
+                                            <th ng-show="pgrossAmountDisData" scope="col">Gross Amount</th>
+                                            <th ng-show="pdiscountData" scope="col"> Discount</th>
+                                            <th ng-show="pnetAmountFcData" scope="col">Net Amount(FC)</th>
+                                            <th ng-show="pexchangeRateData" scope="col">Exchange Rate</th>
+                                            <th ng-show="pnetAmountLcExTaxData" scope="col">Net Amount(LC) Excl. Tax</th>
+                                            <th ng-show="padvanceTaxData" scope="col">Advance Tax</th>
+
+                                            <th ng-show="pwithHoldingTaxData" scope="col">Withholding Tax</th>
+
+                                            <th ng-show="pamountPaidLcData" scope="col">Amount Paid(LC)</th>
+                                            <th ng-show="pbankAccountNoData" scope="col">Bank Account Number</th>
+                                            <th ng-show="pcustomerData" scope="col">Customer </th>
+                                            <th ng-show="pemployeeData" scope="col"> Employee </th>
+                                            <th ng-show="pshareholderData" scope="col"> Shareholder </th>
+                                            <th ng-show="pbeneficiaryDepartmentData" scope="col">Beneficiary Department </th>
+
+                                            <th ng-show="pregionData" scope="col"> Region </th>
+                                            <th ng-show="pcompanyData" scope="col"> Company</th>
+                                            <th ng-show="pbusinessLineData" scope="col"> Business Line </th>
+                                            <th ng-show="pprojectData" scope="col"> Project </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td ng-repeat="pdata in pTableNames" ng-show="{{pdata.data}}"> <input class="form-control" ng-model="pdata.name" /> 
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td ng-repeat="pdata in pTableNames" ng-show="{{pdata.data}}"> <input class="form-control" ng-model="pdata.name" /> </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-repeat="pdata in pTableNames" ng-show="{{pdata.data}}"> <input class="form-control" ng-model="pdata.name" /> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div ng-click="removeTable(data)" ng-class="toggler tooltips" style="margin:8px 0 0 20px;padding-top:5px" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                <i class="fa fa-minus-square"></i>
+                            </div>
+                            <hr class="pay-style-seven"  />
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-click="paymentBtn()" class="toggler tooltips pull-left " style="margin:8px 0 0 20px;" data-container="body" data-placement="left" data-html="true" data-original-title="Click to add more table">
+                                    <i class="fa fa-plus-square"></i>
+                                </div>
+                                 <input ng-model="testData" />
+                                <button class="btn yellow pull-right">Record Invoice</button>
+                                <button  ng-click="paymentDataSub()" class="btn pull-right blue post-btn">Post</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- right control panel -->
+    <div class="portlet-title">
+        <div class="caption font-green-sharp">
+            <i class="icon-settings font-green-sharp"></i>
+            <span class="caption-subject bold uppercase">Control Panel</span>
+            <span class="caption-helper hide"></span>
+        </div>
+
+    </div>
+    <hr />
+    <div class="col-md-2 " id="pap-right-bar">
+        <div class="panel-group" id="accordion">
+
+            <div class="panel panel-default">
+                <div class="panel-heading heading-first">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">Purchase Order</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div>
+                            <label><input type="checkbox" ng-model="requisitionNoData" value="">Requisition</label>
+                        </div>
+
+
+                        <div>
+                            <label><input type="checkbox" ng-model="productData" value="">Product</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="descriptionData" value="">Description</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="qtyData" value="">Quantity</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="measuringScaleData" value="">Measuring Scale</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="rateData" value="">Rate</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="amountFcData" value="">Amount(FC)</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="exchangeRateData" value="">Exchange Rate</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="amountLcData" value="">Amount(LC)</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="customerData" value="">Customer</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="employeeData" value="">Employee</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="shareholderData" value="">Shareholder</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="beneficiaryDepData" value="">Beneficiary Department</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="regionData" value="">Region</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="companyData" value="">Company</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="businessLineData" value="">Business Line</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="projectData" value="">Project</label>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading heading-second">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">Transaction Recording</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div>
+                            <label><input type="checkbox" ng-model="tinvoiceNoData" value="">Invoice</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tpurchaseOrderData" value="">Purchase Order</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tproductData" value="">Product</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tdescriptionData" value="">Description</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tqtyData" value="">Quantity</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tmeasuringScaleData" value="">Measuring Scale</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="trateData" value="">Rate</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tamountFcData" value="">Amount(FC)</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="texchangeRateData" value="">Exchange Rate</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tamountExTaxData" value="">Amount(LC) Excl. Tax</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tfederalExciseDutyData" value="">Federal Excise Duty</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tgstData" value="">GST</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tadvanceTaxData" value="">Advance Tax</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tamountInTaxData" value="">Amount(LC) Incl.Tax</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tcustomerData" value="">Customer</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="temployeeData" value="">Employee</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tshareholderData" value="">Shareholder</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tbeneficiaryDepartmentData" value="">Beneficiary Department</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tregionData" value="">Region</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tcompanyData" value="">Company</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="tbusinessLineData" value="">Business Line</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="tprojectData" value="">Project</label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading heading-third">
+                    <h4 class="panel-title white">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">Payment</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <!--<div ng-repeat="pData in pTableNames">
+                            <label><input type="checkbox" ng-model="pData.data" >{{pData.name}}</label>
+                        </div>-->
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pinvoiceData" value="">Invoice</</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="ppurchaseOrderData" value="">Purchase Order</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pproductData" value="">Product</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pdescriptionData" value="">Description</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pqtyData" value="">Quantity</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pmeasuringScaleData" value="">Measuring Scale</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="prateData" value="">Rate</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pgrossAmountData" value="">Gross Amount</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pdiscountData" value="">Discount</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pnetAmountFcData" value="">Net Amount(FC)</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pexchangeRateData" value="">Exchange Rate</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pnetAmountLcExTaxData" value="">Net Amount(LC) Excl. Tax</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="padvanceTaxData" value="">Advance Tax</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pwithHoldingTaxData" value="">Withholding Tax</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pamountPaidLcData" value="">Amount Paid(LC)</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pbankAccountNoData" value="">Bank Account Number</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pcustomerData" value="">Customer</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pemployeeData" value="">Employee</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pshareholderData" value="">Shareholder</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pbeneficiaryDepartmentData" value="">Beneficiary Department</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pregionData" value="">Region</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pcompanyData" value="">Company</label>
+                        </div>
+
+                        <div>
+                            <label><input type="checkbox" ng-model="pbusinessLineData" value="">Business Line</label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" ng-model="pprojectData" value="">Project</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS-->
+<script>
+  // tables collaps handling
+    $(".collapse-handle").click();
+
+    $(".this-th").css("border-right", "1px solid #0e92ab");
+
+    //date picker
+    function DatepickerPopupDemoCtrl($scope) {
+        $scope.today = function () {
+            $scope.dt = new Date();
+        };
+        $scope.today();
+        $scope.clear = function () {
+            $scope.dt = null;
+        };
+        $scope.inlineOptions = {
+            customClass: getDayClass,
+            minDate: new Date(),
+            showWeeks: true
+        };
+        $scope.dateOptions = {
+            dateDisabled: disabled,
+            formatYear: 'yy',
+            maxDate: new Date(2020, 5, 22),
+            minDate: new Date(),
+            startingDay: 1
+        };
+        // Disable weekend selection
+        function disabled(data) {
+            var date = data.date,
+                mode = data.mode;
+            return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+        }
+        $scope.toggleMin = function () {
+            $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
+            $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
+        };
+        $scope.toggleMin();
+        $scope.open1 = function () {
+            $scope.popup1.opened = true;
+        };
+        $scope.open2 = function () {
+            $scope.popup2.opened = true;
+        };
+        $scope.setDate = function (year, month, day) {
+            $scope.dt = new Date(year, month, day);
+        };
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.altInputFormats = ['M!/d!/yyyy'];
+        $scope.popup1 = {
+            opened: false
+        };
+        $scope.popup2 = {
+            opened: false
+        };
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        var afterTomorrow = new Date();
+        afterTomorrow.setDate(tomorrow.getDate() + 1);
+        $scope.events = [
+            {
+                date: tomorrow,
+                status: 'full'
+            },
+            {
+                date: afterTomorrow,
+                status: 'partially'
+            }];
+
+        function getDayClass(data) {
+            var date = data.date,
+                mode = data.mode;
+            if (mode === 'day') {
+                var dayToCheck = new Date(date).setHours(0, 0, 0, 0);
+                for (var i = 0; i < $scope.events.length; i++) {
+                    var currentDay = new Date($scope.events[i].date).setHours(0, 0, 0, 0);
+                    if (dayToCheck === currentDay) {
+                        return $scope.events[i].status;
+                    }
+                }
+            }
+            return '';
+        }
+    }
+
+</script>
+<!-- BEGIN MAIN JS -->

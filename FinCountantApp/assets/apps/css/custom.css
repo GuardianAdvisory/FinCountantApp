@@ -1,0 +1,105 @@
+﻿/*fixing the scroll bar */
+body {
+    overflow-y: scroll;
+}
+
+
+
+
+
+/*payment and payables table customization*/
+.portlet.box.purple > .portlet-title, .portlet.purple, .portlet > .portlet-body.purple {
+    background-color: #0e92ab !important;
+    border-color: #0e92ab !important;
+}
+
+#pap-right-bar .heading-first {
+    background-color: #0e92ab !important;
+}
+
+    #pap-right-bar .heading-first:hover {
+        background-color: rgba(142, 68, 173, 0.85)
+    }
+
+#pap-right-bar .heading-second {
+    background-color: #c49f47;
+}
+
+    #pap-right-bar .heading-second:hover {
+        background-color: rgba(196, 159, 71, 0.85);
+    }
+
+#pap-right-bar .heading-third {
+    background-color: #3598dc;
+}
+
+    #pap-right-bar .heading-third:hover {
+        background-color: rgba(53, 152, 220, 0.85);
+    }
+
+#pap-right-bar .panel-title {
+    color: white;
+    text-align: center;
+}
+
+    #pap-right-bar .panel-title a:hover {
+        color: white;
+    }
+
+    #pap-right-bar .panel-title a:focus {
+        color: white;
+    }
+
+#pap-tables .form-group {
+    margin-bottom: 0;
+}
+
+.dropdown-menu {
+    min-width: 145px !important;
+}
+
+.table-font {
+    font-weight: bold;
+}
+
+.logo-text:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/*post button*/
+.post-btn {
+    margin: 0 10px 0 0;
+    background-color: #0e92ab;
+    color: white;
+    width: 60.8px;
+}
+
+    .post-btn:hover {
+        color: white;
+    }
+/* Flaired edges, by Tomas Theunissen */
+
+hr.style-seven {
+    border-color: #0e92ab;
+}
+
+    hr.style-seven:before { /* Not really supposed to work, but does */
+        border-color: #0e92ab;
+    }
+
+hr.invoice-style-seven {
+    border-color: goldenrod;
+}
+
+hr.invoice-style-seven:before { /* Not really supposed to work, but does */
+    border-color: goldenrod;
+}
+
+hr.pay-style-seven {
+    border-color: #60aee4;
+}
+
+    hr.pay-style-seven:before { /* Not really supposed to work, but does */
+        border-color: #60aee4;
+    }

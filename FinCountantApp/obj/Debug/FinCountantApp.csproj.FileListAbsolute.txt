@@ -1,0 +1,147 @@
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\ApplicationInsights.config
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\csc.exe
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\csc.exe.config
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\csc.rsp
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\csi.exe
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\csi.rsp
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.AppContext.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.Collections.Immutable.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.IO.FileSystem.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\vbc.exe
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\vbc.exe.config
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\vbc.rsp
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\VBCSCompiler.exe
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\roslyn\VBCSCompiler.exe.config
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\FinCountantApp.dll.config
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\FinCountantApp.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\FinCountantApp.pdb
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Antlr3.Runtime.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Web.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.WindowsServer.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.ApplicationInsights.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.Web.Infrastructure.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Newtonsoft.Json.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Net.Http.Formatting.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Helpers.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Http.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Http.WebHost.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Mvc.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Optimization.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Razor.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Deployment.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Razor.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\WebGrease.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Newtonsoft.Json.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Net.Http.Formatting.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Helpers.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Http.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Http.WebHost.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Mvc.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Optimization.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.Razor.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Deployment.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Razor.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Antlr3.Runtime.pdb
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.ApplicationInsights.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.WindowsServer.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Web.xml
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.dll
+c:\users\bilal\documents\visual studio 2017\Projects\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.pdb
+C:\Users\Bilal\Documents\Visual Studio 2017\Projects\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csprojResolveAssemblyReference.cache
+E:\ng-app\FinCountantApp\FinCountantApp\bin\ApplicationInsights.config
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\csc.exe
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\csc.exe.config
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\csc.rsp
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\csi.exe
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\csi.rsp
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.AppContext.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.Collections.Immutable.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.IO.FileSystem.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\System.Reflection.Metadata.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\vbc.exe
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\vbc.exe.config
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\vbc.rsp
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\VBCSCompiler.exe
+E:\ng-app\FinCountantApp\FinCountantApp\bin\roslyn\VBCSCompiler.exe.config
+E:\ng-app\FinCountantApp\FinCountantApp\bin\FinCountantApp.dll.config
+E:\ng-app\FinCountantApp\FinCountantApp\bin\FinCountantApp.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\FinCountantApp.pdb
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Antlr3.Runtime.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.DependencyCollector.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Web.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.WindowsServer.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.ApplicationInsights.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.Web.Infrastructure.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Newtonsoft.Json.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Net.Http.Formatting.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Helpers.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Http.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Http.WebHost.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Mvc.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Optimization.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Razor.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Deployment.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Razor.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\WebGrease.dll
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Newtonsoft.Json.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Net.Http.Formatting.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Helpers.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Http.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Http.WebHost.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Mvc.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Optimization.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.Razor.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Deployment.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\System.Web.WebPages.Razor.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Antlr3.Runtime.pdb
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.ApplicationInsights.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.DependencyCollector.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.WindowsServer.xml
+E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Web.xml
+E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csprojResolveAssemblyReference.cache
+E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csproj.CoreCompileInputs.cache
+E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.dll
+E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.pdb
