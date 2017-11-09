@@ -21,17 +21,19 @@ namespace FinCountantApp.Controllers
         }
 
         [HttpPost]
-        public void paymentData()
+        [ActionName("AddPayment")]
+
+        public void AddPayment(DataModel.PaymentDataModel data)
         {
-            string data = "hello world";
             SqlConnection conn = new SqlConnection(GetConnectionString());
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into testTable (testTableData) values(@thisData)", conn);
-            cmd.Parameters.AddWithValue("@thisData", data);
+            SqlCommand cmd = new SqlCommand("insert into CASH_PAYMENTS (CashPaymentID,Desciption,Net) values(@CPId,@Desc,@Net)", conn);
+           // cmd.Parameters.AddWithValue("@Desc", );
+          //  cmd.Parameters.AddWithValue("@Net", data.testData);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
+      
         // GET api/values/5
         public string Get(int id)
         {

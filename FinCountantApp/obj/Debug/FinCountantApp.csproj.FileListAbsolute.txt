@@ -141,7 +141,7 @@ E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.DependencyCollector.xml
 E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.WindowsServer.xml
 E:\ng-app\FinCountantApp\FinCountantApp\bin\Microsoft.AI.Web.xml
-E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csprojResolveAssemblyReference.cache
 E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csproj.CoreCompileInputs.cache
 E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.dll
 E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.pdb
+E:\ng-app\FinCountantApp\FinCountantApp\obj\Debug\FinCountantApp.csprojResolveAssemblyReference.cache

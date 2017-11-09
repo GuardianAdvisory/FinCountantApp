@@ -18,7 +18,8 @@ body {
 }
 
     #pap-right-bar .heading-first:hover {
-        background-color: rgba(142, 68, 173, 0.85)
+        background-color: rgba(142, 68, 173, 0.85);
+        /*transition-duration: 0.5s;*/
     }
 
 #pap-right-bar .heading-second {
@@ -27,6 +28,7 @@ body {
 
     #pap-right-bar .heading-second:hover {
         background-color: rgba(196, 159, 71, 0.85);
+        /*transition-duration: 0.5s;*/
     }
 
 #pap-right-bar .heading-third {
@@ -35,6 +37,7 @@ body {
 
     #pap-right-bar .heading-third:hover {
         background-color: rgba(53, 152, 220, 0.85);
+        /*transition-duration: 0.5s;*/
     }
 
 #pap-right-bar .panel-title {
@@ -92,9 +95,9 @@ hr.invoice-style-seven {
     border-color: goldenrod;
 }
 
-hr.invoice-style-seven:before { /* Not really supposed to work, but does */
-    border-color: goldenrod;
-}
+    hr.invoice-style-seven:before { /* Not really supposed to work, but does */
+        border-color: goldenrod;
+    }
 
 hr.pay-style-seven {
     border-color: #60aee4;
@@ -103,3 +106,8 @@ hr.pay-style-seven {
     hr.pay-style-seven:before { /* Not really supposed to work, but does */
         border-color: #60aee4;
     }
+/*input numbers text style*/
+
+.num-align{
+   text-align:right;
+}
