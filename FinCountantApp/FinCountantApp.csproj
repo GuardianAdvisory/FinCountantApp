@@ -5551,6 +5551,7 @@
     <Content Include="js\directives.js" />
     <Content Include="js\main.js" />
     <Content Include="js\scripts\table-ajax.js" />
+    <Content Include="tpl\control-panel-pap.html" />
     <Content Include="tpl\footer.html" />
     <Content Include="tpl\header.html" />
     <Content Include="tpl\quick-sidebar.html" />
