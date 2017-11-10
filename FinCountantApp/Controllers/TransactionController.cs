@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -29,45 +30,65 @@ namespace FinCountantApp.Controllers
         //Transaction Recording
         [HttpPost]
         [ActionName("AddTransaction")]
-        public void AddTransaction(DataModel.TransactionDataModel data)
+        public string AddTransaction(DataModel.TransactionDataModel data)
         {
-            int i;
-            for (i = 0; i <= 1; i++)
-            {
 
-                string mainHead = null;
-                int Cr = 0;
-                int Dr = 0;
+            string result = "Duplicate Record";
+
+            if (ModelState.IsValid)
+            {
                 SqlConnection conn = new SqlConnection(GetConnectionString());
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into " +
-                    "TRANSACTIONS (Date,Employee,Supplier,Customer,Description,MainHead,SubHead,Dr,Cr,Net)" +
-                    " values(@Date,@Emp,@Sup,@Cust,@Desc,@MH,@SH,@Dr,@Cr,@Net)", conn);
-                cmd.Parameters.AddWithValue("@Date", "07/Nov/17");
-                cmd.Parameters.AddWithValue("@Emp", data.employee);
-                cmd.Parameters.AddWithValue("@Sup", data.Supplier);
-                cmd.Parameters.AddWithValue("@Cust", data.customer);
-                cmd.Parameters.AddWithValue("@Desc", data.description);
-                if (i == 0)
+                SqlCommand cmd1 = new SqlCommand("Select * From TRANSACTIONS where invoiceId=@id", conn);
+                cmd1.Parameters.AddWithValue("@id", data.invoice);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd1);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count < 1)
                 {
-                    mainHead = "Account Payables";
-                    Cr = data.TotalAmount;
+                    int i;
+                    for (i = 0; i <= 1; i++)
+                    {
+                        string mainHead = null;
+                        int Cr = 0;
+                        int Dr = 0;
+                        SqlCommand cmd = new SqlCommand("insert into " +
+                            "TRANSACTIONS (invoiceId,Date,Employee,Supplier,Customer,Description,MainHead,SubHead,Dr,Cr,Net)" +
+                            " values(@inv,@Date,@Emp,@Sup,@Cust,@Desc,@MH,@SH,@Dr,@Cr,@Net)", conn);
+                        cmd.Parameters.AddWithValue("@inv", data.invoice);
+                        cmd.Parameters.AddWithValue("@Date", "07/Nov/17");
+                        cmd.Parameters.AddWithValue("@Emp", data.employee);
+                        cmd.Parameters.AddWithValue("@Sup", data.Supplier);
+                        cmd.Parameters.AddWithValue("@Cust", data.customer);
+                        cmd.Parameters.AddWithValue("@Desc", data.description);
+                        if (i == 0)
+                        {
+                            mainHead = "Account Payables";
+                            Cr = data.TotalAmount;
+                        }
+                        else
+                        {
+                            mainHead = "Computer & IT";
+                            Dr = data.TotalAmount;
+                        }
+                        cmd.Parameters.AddWithValue("@MH", mainHead);
+                        cmd.Parameters.AddWithValue("@SH", " ");
+                        cmd.Parameters.AddWithValue("@Cr", Cr);
+                        cmd.Parameters.AddWithValue("@Dr", Dr);
+                        cmd.Parameters.AddWithValue("@Net", data.TotalAmount);
+                        cmd.ExecuteNonQuery();
+                        
+                    }
+                    conn.Close();
+                    result = "Record Added";
                 }
                 else
                 {
-                    mainHead = "Computer & IT";
-                    Dr = data.TotalAmount;
+                    conn.Close();
                 }
-                cmd.Parameters.AddWithValue("@MH", mainHead);
-                cmd.Parameters.AddWithValue("@SH", " ");
-                cmd.Parameters.AddWithValue("@Cr", Cr);
-                cmd.Parameters.AddWithValue("@Dr", Dr);
-                cmd.Parameters.AddWithValue("@Net", data.TotalAmount);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
             }
-
+            return result;
+      
         }
 
         // PUT: api/Transaction/5

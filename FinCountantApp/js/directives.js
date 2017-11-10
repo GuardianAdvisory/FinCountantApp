@@ -63,3 +63,22 @@ MetronicApp.directive('dropdownMenuHover', function () {
     }
   };  
 });
+
+MetronicApp.directive('formate', ['$filter', function ($filter) {
+    return {
+        require: '?ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            if (!ctrl) return;
+
+            ctrl.$formatters.unshift(function (a) {
+                return $filter(attrs.formate)(ctrl.$modelValue)
+            });
+
+            ctrl.$parsers.unshift(function (viewValue) {
+                var plainNumber = viewValue.replace(/[^\d|\-+|\.+]/g, '');
+                elem.val($filter(attrs.formate)(plainNumber));
+                return plainNumber;
+            });
+        }
+    };
+}]);

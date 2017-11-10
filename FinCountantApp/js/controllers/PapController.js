@@ -1,6 +1,6 @@
 ﻿/* Setup blank page controller */
-angular.module('MetronicApp').controller('PapController', ['$rootScope', '$scope', 'settings', 'paymentService', 'transactService', 'PoService',
-    function ($rootScope, $scope, settings, paymentService, transactService, PoService) {
+angular.module('MetronicApp').controller('PapController', ['$http', '$rootScope', '$scope', 'settings', 'paymentService', 'transactService', 'PoService',
+    function ($http, $rootScope, $scope, settings, paymentService, transactService, PoService) {
         $scope.$on('$viewContentLoaded', function () {
             // initialize core components
             App.initAjax();
@@ -17,63 +17,63 @@ angular.module('MetronicApp').controller('PapController', ['$rootScope', '$scope
         $scope.payment = {};
         $scope.po = {};
 
-      
+        //Amount incl tax maker
+
+        function AmtIncTx() {
+            var result =
+                parseInt($scope.transact.amountExTax) +
+                parseInt($scope.transact.federalExciseDuty) +
+                parseInt($scope.transact.gst) +
+                parseInt($scope.transact.advanceTax);
+            $scope.transact.amountInTax = result;
+            $scope.transact.TotalAmount = result;
+        }
+
         //Total amount Calculator
 
         $scope.tifQtyChange = function () {
             $scope.tamountTcMaker();
             $scope.tExRate();
+            AmtIncTx();
         }
         $scope.tamountTcMaker = function () {
             var result = $scope.transact.rate * $scope.transact.qty;
             $scope.transact.amountTc = result;
             $scope.tExRate();
-            var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
-            $scope.transact.amountInTax = result;
-            $scope.transact.TotalAmount = result;
+            AmtIncTx();
         }
         $scope.tExRate = function () {
             var result = $scope.transact.amountTc * $scope.transact.exchangeRate;
             $scope.transact.amountExTax = result;
+            AmtIncTx();
         }
 
         $scope.currencySelect = function (currency) {
             if (currency == "PKR") {
                 $scope.transact.exchangeRate = 1;
                 $scope.tExRate();
-                var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
-                $scope.transact.amountInTax = result;
-                $scope.transact.TotalAmount = result;
+                AmtIncTx();
             }
             else {
                 $scope.transact.exchangeRate = 105.05;
                 $scope.tExRate();
-                var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
-                $scope.transact.amountInTax = result;
-                $scope.transact.TotalAmount = result;
+                AmtIncTx();
             }
         }
-        $scope.tExAmountChg = function () {
-            
+
+        $scope.tFdExdChg = function (fed) {
+            $scope.transact.TotalFED = fed;
+            AmtIncTx();
         }
-        $scope.tFdExdChg = function () {
-            var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
-            $scope.transact.amountInTax = result;
-            $scope.transact.TotalAmount = result;
+        $scope.tGstChg = function (gst) {
+            $scope.transact.TotalGST = gst;
+
+            AmtIncTx();
         }
-        $scope.tGstChg = function () {
-            var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
+        $scope.tAdvTxChg = function (advTx) {
+            $scope.transact.TotalAdvTax = advTx;
 
-            $scope.transact.amountInTax = result;
-            $scope.transact.TotalAmount = result;
-
-        }
-        $scope.tAdvTxChg = function () {
-            var result = parseInt($scope.transact.amountExTax) + parseInt($scope.transact.federalExciseDuty) + parseInt($scope.transact.gst) + parseInt($scope.transact.advanceTax);
-
-            $scope.transact.amountInTax = result;
-            $scope.transact.TotalAmount = result;
-
+            AmtIncTx();
         }
 
 
@@ -360,11 +360,22 @@ angular.module('MetronicApp').controller('PapController', ['$rootScope', '$scope
         //payment form submission
         $scope.paymentForm = function () {
             paymentService.addPaymentToDB($scope.payment);
+
         }
 
         //transactoin form submission
         $scope.transactForm = function () {
-            transactService.addTransactToDB($scope.transact);
+            //  transactService.addTransactToDB($scope.transact);
+
+            $http.post('/api/Transaction/AddTransaction', $scope.transact)
+                .then(function (response) {
+                    $scope.transact = {};
+                    alert(response.data);
+
+                }).catch(function (response) {
+                    console.log(response.status);
+                    alert("Something is wrong");
+                });
         }
 
         //purchase order form submission
@@ -441,13 +452,13 @@ angular.module('MetronicApp').controller('PapController', ['$rootScope', '$scope
         fac.addTransactToDB = function (transact) {
             $http.post('/api/Transaction/AddTransaction', transact)
                 .then(function (response) {
-
                     alert("Transaction data added successfully into FinCountant Database");
 
                 }).catch(function (response) {
                     console.log(response.status);
                     alert("Something is wrong");
                 });
+
         }
         return fac;
     }]).factory("PoService", ["$http", function ($http) {
@@ -465,3 +476,9 @@ angular.module('MetronicApp').controller('PapController', ['$rootScope', '$scope
         }
         return fac;
     }]);
+
+
+
+
+
+

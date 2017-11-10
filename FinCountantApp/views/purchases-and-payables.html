@@ -120,13 +120,13 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="table-font">PO Number</label>
-                                            <input class="form-control num-align" ng-model="po.PoNumber" />
+                                            <input class="form-control num-align" formate="number" ng-model="po.PoNumber" />
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="table-font">Total Amount</label>
-                                            <input class="form-control num-align" ng-model="po.TotalAmount" />
+                                            <input class="form-control num-align" formate="number" ng-model="po.TotalAmount" />
                                         </div>
                                         <div class=" form-group">
                                             <label class="table-font">Responsibility Center</label>
@@ -179,15 +179,15 @@
 
                                             </td>
                                             <td ng-show="amountData" class="ng-scope">
-                                                <input class="form-control num-align" ng-model="po.amount">
+                                                <input class="form-control num-align" formate="number" ng-model="po.amount">
 
                                             </td>
                                             <td ng-show="qtyData" class="ng-scope">
-                                                <input class="form-control num-align" ng-model="po.qty">
+                                                <input class="form-control num-align" type="number" formate="number" ng-model="po.qty">
 
                                             </td>
                                             <td ng-show="UomData" class="ng-scope">
-                                                <input class="form-control num-align" ng-model="po.Uom">
+                                                <input class="form-control num-align"  ng-model="po.Uom">
 
                                             </td>
                                             <td ng-show="rateData" class="ng-scope">
@@ -340,7 +340,7 @@
                     </div>
                     <div class="portlet-body">
                         <!-- <div ng-repeat="data in TRecordingTables"> -->
-                        <form ng-submit="transactForm()">
+                        <form ng-submit="transactForm()" name="tarnsactForm">
                             <div class="row">
                                 <div class="col-md-12 ">
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
@@ -381,11 +381,11 @@
 
                                         <div class=" form-group">
                                             <label class="table-font">Total Federal Excise Duty </label>
-                                            <input class="form-control num-align" ng-model="transact.TotalFED" />
+                                            <input class="form-control num-align" formate="number" ng-model="transact.TotalFED" />
                                         </div>
                                         <div class=" form-group">
                                             <label class="table-font">Total GST</label>
-                                            <input class="form-control num-align" ng-model="transact.TotalGST" />
+                                            <input class="form-control num-align" formate="number" ng-model="transact.TotalGST" />
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
@@ -398,11 +398,11 @@
 
                                         <div class=" form-group">
                                             <label class="table-font">Total Advance Tax </label>
-                                            <input class="form-control num-align" ng-model="transact.TotalAdvTax" />
+                                            <input class="form-control num-align" formate="number" ng-model="transact.TotalAdvTax" />
                                         </div>
                                         <div class=" form-group">
                                             <label class="table-font">Total Amount</label>
-                                            <input class="form-control num-align" required ng-model="transact.TotalAmount" />
+                                            <input class="form-control num-align" required formate="number" ng-model="transact.TotalAmount" />
                                         </div>
 
                                     </div>
@@ -444,7 +444,7 @@
                                     <tbody>
                                         <tr>
                                             <td ng-show="tinvoiceNoData" class="ng-scope">
-                                                <input class="form-control num-align " ng-model="transact.invoice">
+                                                <input class="form-control num-align " required ng-model="transact.invoice">
 
                                             </td>
                                             <td ng-show="tpurchaseOrderData" class="ng-scope">
@@ -456,7 +456,7 @@
 
                                             </td>
                                             <td ng-show="tdescriptionData" class="ng-scope">
-                                                <input class="form-control " ng-model="transact.description">
+                                                <input class="form-control " required ng-model="transact.description">
 
                                             </td>
                                             <td ng-show="tqtyData" class="ng-scope">
@@ -468,15 +468,15 @@
 
                                             </td>
                                             <td ng-show="trateData" class="ng-scope">
-                                                <input class="form-control num-align" ng-change="tamountTcMaker()" ng-model="transact.rate">
+                                                <input class="form-control num-align" formate="number" ng-change="tamountTcMaker()" ng-model="transact.rate">
 
                                             </td>
                                             <td ng-show="tamountTcData" class="ng-scope">
-                                                <input class="form-control num-align" ng-model="transact.amountTc">
+                                                <input class="form-control num-align" formate="number" ng-model="transact.amountTc">
 
                                             </td>
                                             <td ng-show="texchangeRateData" ng-init="transact.exchangeRate=1" class="ng-scope">
-                                                <input class="form-control num-align" ng-change="tExRate()" ng-model="transact.exchangeRate">
+                                                <input class="form-control num-align" formate="number" ng-change="tExRate()" ng-model="transact.exchangeRate">
 
                                             </td>
                                             <td ng-show="tcurrencyData" class="ng-scope">
@@ -486,31 +486,31 @@
                                             </td>
 
                                             <td ng-show="tamountExTaxData" class="ng-scope">
-                                                <input class="form-control num-align" ng-change="tExAmountChg()" ng-model="transact.amountExTax">
+                                                <input class="form-control num-align" formate="number" ng-change="tExAmountChg()" ng-model="transact.amountExTax">
 
                                             </td>
                                             <td ng-show="tfederalExciseDutyData" class="ng-scope">
-                                                <input class="form-control num-align" ng-init="transact.federalExciseDuty=0" ng-change="tFdExdChg()" ng-model="transact.federalExciseDuty">
+                                                <input class="form-control num-align" formate="number" ng-init="transact.federalExciseDuty=0" ng-change="tFdExdChg(transact.federalExciseDuty)" ng-model="transact.federalExciseDuty">
 
                                             </td>
                                             <td ng-show="tgstData" class="ng-scope">
-                                                <input class="form-control num-align" ng-init="transact.gst=0" ng-change="tGstChg()" ng-model="transact.gst">
+                                                <input class="form-control num-align" formate="number" ng-init="transact.gst=0" ng-change="tGstChg(transact.gst)" ng-model="transact.gst">
 
                                             </td>
                                             <td ng-show="tadvanceTaxData" class="ng-scope">
-                                                <input class="form-control num-align" ng-init="transact.advanceTax=0" ng-change="tAdvTxChg()" ng-model="transact.advanceTax">
+                                                <input class="form-control num-align" formate="number" ng-init="transact.advanceTax=0" ng-change="tAdvTxChg(transact.advanceTax)" ng-model="transact.advanceTax">
 
                                             </td>
                                             <td ng-show="tamountInTaxData" class="ng-scope">
-                                                <input class="form-control num-align" ng-model="transact.amountInTax">
+                                                <input class="form-control num-align" formate="number" ng-model="transact.amountInTax">
 
                                             </td>
                                             <td ng-show="tcustomerData" class="ng-scope">
-                                                <input class="form-control " ng-model="transact.customer">
+                                                <input class="form-control " required ng-model="transact.customer">
 
                                             </td>
                                             <td ng-show="temployeeData" class="ng-scope">
-                                                <input class="form-control " ng-model="transact.employee">
+                                                <input class="form-control " required ng-model="transact.employee">
 
                                             </td>
                                             <td ng-show="tshareholderData" class="ng-scope">
@@ -561,7 +561,7 @@
                                         <i class="fa fa-plus-square"></i>
                                     </div>
                                     <button style="width:121.5px;" class="btn blue pull-right">Pay Invoice</button>
-                                    <input type="submit" value="Post" class="btn pull-right yellow post-btn">
+                                    <input type="submit" value="Post" ng-disabled="tarnsactForm.$invalid" class="btn pull-right yellow post-btn">
 
                                 </div>
                             </div>
