@@ -17,6 +17,13 @@ angular.module('MetronicApp').controller('PapController', ['$http', '$rootScope'
         $scope.payment = {};
         $scope.po = {};
 
+        //auto selected analysis codes
+
+        $scope.tinvoiceNoData = true;
+        $scope.trateData = true;
+        $scope.tcustomerData = true;
+        $scope.temployeeData = true;
+
         //Amount incl tax maker
 
         function AmtIncTx() {
@@ -141,6 +148,10 @@ angular.module('MetronicApp').controller('PapController', ['$http', '$rootScope'
             {
                 name: 'Account Payable',
                 value: 'Account Payable'
+            },
+            {
+                name: 'Immediate Payment',
+                value: 'Immediate Payment'
             }
         ];
 
