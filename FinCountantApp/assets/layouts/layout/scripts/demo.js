@@ -185,7 +185,7 @@ var Demo = function() {
         var setColor = function(color) {
             var color_ = (App.isRTL() ? color + '-rtl' : color);
             $('#style_color').attr("href", Layout.getLayoutCssPath() + 'themes/' + color_ + ".min.css");
-            if (color == 'light2') {
+            if (color == 'gray') {
                 $('.page-logo img').attr('src', Layout.getLayoutImgPath() + 'logo-invert.png');
             } else {
                 $('.page-logo img').attr('src', Layout.getLayoutImgPath() + 'logo.png');
