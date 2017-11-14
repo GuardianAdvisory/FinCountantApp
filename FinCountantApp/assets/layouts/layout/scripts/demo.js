@@ -197,7 +197,7 @@ var Demo = function() {
             $('.toggler-close').show();
             $('.theme-panel > .theme-options').show();
         });
-
+     
         $('.toggler-close', panel).click(function() {
             $('.toggler').show();
             $('.toggler-close').hide();

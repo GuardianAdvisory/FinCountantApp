@@ -193,13 +193,12 @@ var Demo = function () {
             $('.toggler-close').show();
             $('.theme-panel > .theme-options').show();
         });
-
         $('.toggler-close', panel).click(function () {
             $('.toggler').show();
             $('.toggler-close').hide();
             $('.theme-panel > .theme-options').hide();
         });
-
+       
         $('.theme-colors > ul > li', panel).click(function () {
             var color = $(this).attr("data-style");
             setColor(color);
