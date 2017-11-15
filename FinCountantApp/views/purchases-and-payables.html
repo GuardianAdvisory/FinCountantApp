@@ -59,7 +59,7 @@
 
 <div class="row" ng-controller="PapController">
 
-    <div class="col-md-10">
+    <div class="col-md-12">
         <!-- BEGIN: ACCORDION DEMO -->
 
         <div class="portlet light bordered " id="pap-tables">
@@ -826,10 +826,278 @@
 
                        
                         <h1>Reports</h1>
+           
 
                     </div>
-                    <div class="tab-pane text-center" id="setupTab">
-                      <h1>Setup</h1>
+                    <div class="tab-pane" id="setupTab">
+                        <!-- right control panel -->
+
+                        <div class="portlet-title">
+                            <div class="caption font-green-sharp">
+                                <i class="icon-settings font-green-sharp"></i>
+                                <span class="caption-subject bold uppercase">Control Panel</span>
+                                <span class="caption-helper hide"></span>
+                            </div>
+
+                        </div>
+
+
+                        <hr />
+                        <!--<div data-ng-include="'tpl/control-panel-pap.html'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm"> </div>-->
+
+
+                        <div id="pap-right-bar">
+                            <div class="panel-group" id="accordion">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading heading-first">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">Purchase Order</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div>
+                                                <label><input type="checkbox" ng-model="requisitionNoData" value="">Requisition</label>
+                                            </div>
+
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="productData" value="">Product</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="descriptionData" value="">Description</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="qtyData" value="">Quantity</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="UomData" value="">UOM</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="rateData" value="">Rate</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="amountTcData" value="">Amount(TC)</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="exchangeRateData" value="">Exchange Rate</label>
+                                            </div>
+                                            <div>
+
+                                                <label><input type="checkbox" ng-model="amountLcData" value="">Amount(LC)</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="customerData" value="">Customer</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="employeeData" value="">Employee</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="shareholderData" value="">Shareholder</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="beneficiaryDepData" value="">Beneficiary Department</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="regionData" value="">Region</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="companyData" value="">Company</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="businessLineData" value="">Business Line</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="projectData" value="">Project</label>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading heading-second">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">Transaction Recording</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tinvoiceNoData" value="">Invoice</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tpurchaseOrderData" value="">Purchase Order</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tproductData" value="">Product</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tdescriptionData" value="">Description</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tqtyData" value="">Quantity</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tUomData" value="">UOM</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="trateData" value="">Rate</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tamountTcData" value="">Amount(TC)</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="texchangeRateData" value="">Exchange Rate</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tcurrencyData" value="">Currency</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tamountExTaxData" value="">Amount(LC) Excl. Tax</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tfederalExciseDutyData" value="">Federal Excise Duty</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tgstData" value="">GST</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tadvanceTaxData" value="">Advance Tax</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tamountInTaxData" value="">Amount(LC) Incl.Tax</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tcustomerData" value="">Customer</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="temployeeData" value="">Employee</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tshareholderData" value="">Shareholder</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tbeneficiaryDepartmentData" value="">Beneficiary Department</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tregionData" value="">Region</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tcompanyData" value="">Company</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tbusinessLineData" value="">Business Line</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="tprojectData" value="">Project</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading heading-third">
+                                        <h4 class="panel-title white">
+                                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">Payment</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+
+                                            <!--<div ng-repeat="pData in pTableNames">
+                            <label><input type="checkbox" ng-model="pData.data" >{{pData.name}}</label>
+                        </div>-->
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pinvoiceData" value="">Invoice</</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="ppurchaseOrderData" value="">Purchase Order</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pproductData" value="">Product</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pdescriptionData" value="">Description</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pqtyData" value="">Quantity</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pUomData" value="">UOM</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="prateData" value="">Rate</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pgrossAmountData" value="">Gross Amount</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pdiscountData" value="">Discount</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pnetamountTcData" value="">Net Amount(TC)</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pexchangeRateData" value="">Exchange Rate</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pnetAmountLcExTaxData" value="">Net Amount(LC) Excl. Tax</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pwithHoldingTaxData" value="">Withholding Tax</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pamountPaidLcData" value="">Amount Paid(LC)</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pbankAccountNoData" value="">Bank Account Number</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pcustomerData" value="">Customer</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pemployeeData" value="">Employee</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pshareholderData" value="">Shareholder</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pbeneficiaryDepartmentData" value="">Beneficiary Department</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pregionData" value="">Region</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pcompanyData" value="">Company</label>
+                                            </div>
+
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pbusinessLineData" value="">Business Line</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" ng-model="pprojectData" value="">Project</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -838,274 +1106,7 @@
         </div>
     </div>
     <br />
-    <!-- right control panel -->
 
-    <div class="portlet-title">
-        <div class="caption font-green-sharp">
-            <i class="icon-settings font-green-sharp"></i>
-            <span class="caption-subject bold uppercase">Control Panel</span>
-            <span class="caption-helper hide"></span>
-        </div>
-
-    </div>
-
-
-    <hr />
-    <!--<div data-ng-include="'tpl/control-panel-pap.html'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm"> </div>-->
-   
-  
-    <div class="col-md-2 " id="pap-right-bar">
-        <div class="panel-group" id="accordion">
-
-            <div class="panel panel-default">
-                <div class="panel-heading heading-first">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">Purchase Order</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div>
-                            <label><input type="checkbox" ng-model="requisitionNoData" value="">Requisition</label>
-                        </div>
-
-
-                        <div>
-                            <label><input type="checkbox" ng-model="productData" value="">Product</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="descriptionData" value="">Description</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="qtyData" value="">Quantity</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="UomData" value="">UOM</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="rateData" value="">Rate</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="amountTcData" value="">Amount(TC)</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="exchangeRateData" value="">Exchange Rate</label>
-                        </div>
-                        <div>
-                            
-                            <label><input type="checkbox" ng-model="amountLcData" value="">Amount(LC)</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="customerData" value="">Customer</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="employeeData" value="">Employee</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="shareholderData" value="">Shareholder</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="beneficiaryDepData" value="">Beneficiary Department</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="regionData" value="">Region</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="companyData" value="">Company</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="businessLineData" value="">Business Line</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="projectData" value="">Project</label>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="panel panel-default">
-                <div class="panel-heading heading-second">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">Transaction Recording</a>
-                    </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div>
-                            <label><input type="checkbox" ng-model="tinvoiceNoData" value="">Invoice</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tpurchaseOrderData" value="">Purchase Order</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tproductData" value="">Product</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tdescriptionData" value="">Description</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tqtyData" value="">Quantity</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tUomData" value="">UOM</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="trateData" value="">Rate</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tamountTcData" value="">Amount(TC)</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="texchangeRateData" value="">Exchange Rate</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tcurrencyData" value="">Currency</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tamountExTaxData" value="">Amount(LC) Excl. Tax</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tfederalExciseDutyData" value="">Federal Excise Duty</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tgstData" value="">GST</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tadvanceTaxData" value="">Advance Tax</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tamountInTaxData" value="">Amount(LC) Incl.Tax</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tcustomerData" value="">Customer</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="temployeeData" value="">Employee</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tshareholderData" value="">Shareholder</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tbeneficiaryDepartmentData" value="">Beneficiary Department</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tregionData" value="">Region</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tcompanyData" value="">Company</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="tbusinessLineData" value="">Business Line</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="tprojectData" value="">Project</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading heading-third">
-                    <h4 class="panel-title white">
-                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">Payment</a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-
-                        <!--<div ng-repeat="pData in pTableNames">
-                            <label><input type="checkbox" ng-model="pData.data" >{{pData.name}}</label>
-                        </div>-->
-                        <div>
-                            <label><input type="checkbox" ng-model="pinvoiceData" value="">Invoice</</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="ppurchaseOrderData" value="">Purchase Order</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pproductData" value="">Product</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pdescriptionData" value="">Description</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pqtyData" value="">Quantity</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pUomData" value="">UOM</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="prateData" value="">Rate</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pgrossAmountData" value="">Gross Amount</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pdiscountData" value="">Discount</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pnetamountTcData" value="">Net Amount(TC)</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pexchangeRateData" value="">Exchange Rate</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pnetAmountLcExTaxData" value="">Net Amount(LC) Excl. Tax</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pwithHoldingTaxData" value="">Withholding Tax</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pamountPaidLcData" value="">Amount Paid(LC)</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pbankAccountNoData" value="">Bank Account Number</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pcustomerData" value="">Customer</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pemployeeData" value="">Employee</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pshareholderData" value="">Shareholder</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="pbeneficiaryDepartmentData" value="">Beneficiary Department</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="pregionData" value="">Region</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="pcompanyData" value="">Company</label>
-                        </div>
-
-                        <div>
-                            <label><input type="checkbox" ng-model="pbusinessLineData" value="">Business Line</label>
-                        </div>
-                        <div>
-                            <label><input type="checkbox" ng-model="pprojectData" value="">Project</label>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 <!-- END MAIN CONTENT -->
